@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { SafeAreaView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Webview from "./Webview";
 
 const App = () => { 
@@ -7,7 +7,7 @@ const App = () => {
   const [inp, setInput] = useState("");
 
   return (
-      <>
+      <SafeAreaView style={{flex: 1}}>
       {url === "" && (
         <View>
           <TextInput onChangeText={text => setInput(text)} value={inp}/>
@@ -19,7 +19,7 @@ const App = () => {
       {url !== "" && (
         <Webview url={url} />
       )}
-      </>
+      </SafeAreaView>
     );
 }
 
