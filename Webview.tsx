@@ -24,11 +24,6 @@ function Webview({url}:WVProps){
                 allowsBackForwardNavigationGestures={true}
                 sharedCookiesEnabled
                 onMessage={ (data) => console.log(data) }
-                onShouldStartLoadWithRequest={(request) => {
-                    if (currentUri === request.url) return true;
-                    setUri(request.url);
-                    return false;
-                }}
             />
         </SafeAreaView>
     )
