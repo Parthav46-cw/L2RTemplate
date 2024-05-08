@@ -21,6 +21,9 @@ function Webview({url}:WVProps){
                     uri: currentUri,
                     headers: getHeaders()
                 }}
+                allowsBackForwardNavigationGestures={true}
+                sharedCookiesEnabled
+                onMessage={ (data) => console.log(data) }
                 onShouldStartLoadWithRequest={(request) => {
                     if (currentUri === request.url) return true;
                     setUri(request.url);
